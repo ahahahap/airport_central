@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default col-md-10" >
+          <div class="panel-heading">
+            <div class="col-md-9">
+                <h2 class="panel-title">PROJECTS</h2>
+            </div>
+          </div><!--END OF PANEL HEADING DIV-->
+          <div class="panel-body">
+            <div class="table-responsive">
+               <table class="table">
+                    <tr>
+                        <th ng-repeat="column in columns" class="projectColumn">{{column}}</th>
+                    </tr>
+                    <tr ng-repeat="project in projects" class="projectList">
+                        <td>{{project.name}}</td>
+                        <td>{{project.number}}</td>
+                        <td>{{project.status}}</td>
+                    </tr>
+                </table>
+            </div><!--END OF RESPONSIVE TABLE DIV-->
+          </div><!--END OF PANEL-BODY DIV-->
+        </div><!--END OF PANEL DIV-->
+    </div><!--END OF ROW DIV-->
+</div><!--END OF CONTAINER DIV-->

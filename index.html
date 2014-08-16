@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>  <html class="ie ie6 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 7]>     <html class="ie ie7 lte9 lte8 lte7"> <![endif]-->
+<!--[if IE 8]>     <html class="ie ie8 lte9 lte8"> <![endif]-->
+<!--[if IE 9]>     <html class="ie ie9 lte9"> <![endif]-->
+<!--[if gt IE 9]>  <html> <![endif]-->
+<!--[if !IE]><!--> <html>             <!--<![endif]-->
+<head>
+
+<!-- TITLE AND DESCRIPTION -->
+<title>AIRPORT CENTRAL</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta name="description" content="single page app"/>
+<meta name="keywords" content="airport central"/>
+
+<!-- END OF TITLE AND DESCRIPTIONS -->
+
+<!-- STYLES -->
+<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/jquery.pageslide.css" />
+<link rel="stylesheet" href="css/mystyle.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+
+<!--[if lt IE 7]>
+    <link href="/css/bootstrap-ie7.css" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- END OF STYLES -->
+</head>
+
+<body>
+
+<div class="main">
+
+    <!--MAIN NAVIGATION-->
+    <nav class="navbar navbar-inverse">
+
+        <div id="modal">
+            <p id="closeButton"><a href="javascript:$.pageslide.close()">&#10006</a></p>
+            
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="index.html" >HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li><a href="project.html" >PROJECTS</a></li>
+              <li><a href="contact.html" >CONTACT</a></li>
+            </ul>
+
+            <!--FOOTER-->
+            <footer>
+              <ul class="list-group">
+                    <li><h4>AIRPORT EXPERT</h4></li>
+                    <li id="address">123 TECHNOLOGO ST<br/>VANCOUVER, BC V6B 1A4<br/> CANADA</li>
+                    <li id="telephone"><br/>Tel: (604)000-2000<br/>info@airportexpert.ca</li>
+                    <li class="social">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/facebook.png" alt="facebook">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/tw.png" alt="twitter">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/tumblr.png"  alt="tumblr">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/in.png"  alt="linkedin">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/rssfeed.png"  alt="rss">
+                    </li>
+                </ul>
+                
+            </footer><!--END OF FOOTER-->
+        </div><!--END OF MODAL-->
+        
+        <div id="bar">
+            <div id="menu_button">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+              <a class="navbar-brand" href="#modal">
+                <i class="fa fa-bars fa-2x"></i>
+              </a>
+            </div>
+            <div id="bcm_logo"></div>
+        </div>
+    </nav><!--END OF MAIN NAVIGATION-->
+
+    <div class="app" ng-app="airportApp" ng-controller="airportController">
+        <div class="appContainer">
+            <div class="row">
+                <div class="formContainer col-md-8">
+                    <form id="flightSearchForm" role="form" method="post" name="myForm" valid-submit="submitTheForm()" novalidate>
+                        <h2>AIRPORT HUB</h2>
+                        <div class="container">
+                            <div class="row" id="status">
+                                <div class="col-xs-12 col-md-4" >
+                                    <ul class="flightStatusToggle" role="radiogroup" id="flightStatusID" ng-show="nonMobile">
+                                        <li role="radio"><a href="#" class="departure highlight">departure</a></li>
+                                        <li role="radio"><a href="#" class="arrival">arrival</a></li>
+                                    </ul>
+                                    <div class="radio" ng-show="mobileRadio">
+                                      <label id="departureLabel">
+                                        <input type="radio" name="airportstatus" id="departureRadio" ng-model="selectedStatus" value="dep" checked>
+                                          DEPARTURE
+                                      </label>
+                                      <label id="arrivalLabel">
+                                        <input type="radio" name="airportstatus" id="arrivalRadio" ng-model="selectedStatus" value="arr">
+                                          ARRIVAL
+                                      </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-2">
+                                    <div class="form-group clearfix">
+                                        <label for="exampleInputEmail1">AIRPORT</label>
+                                        <select id="airport" class="form-control" ng-model="selectedAirport" required ng-options="airport.code as airport.name for airport in airports" name="airportSelect"> 
+                                            <option value="" selected>--Select Airport--</option>
+                                        </select>
+                                        <div class="alert alert-danger" ng-show="myForm.$submitted && myForm.airportSelect.$error.required">Please Select an Airport</div>
+                                    </div>  
+                                </div>
+                                <div class="col-xs-12 col-md-2">
+                                     <div class="form-group clearfix">
+                                        <label for="exampleInputPassword1">AIRLINE</label>
+                                        <select class="form-control" ng-model="selectedAirline" required  ng-options="airline.code as airline.name for airline in airlines" name="airlineSelect">
+                                            <option value="" selected>--Select Airline--</option>
+                                        </select>
+                                         <div class="alert alert-danger" ng-show="myForm.$submitted && myForm.airlineSelect.$error.required">Please Select an Airline</div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-2">
+                                    <div class="form-group clearfix">  
+                                        <label for="exampleInputEmail1">TIME FRAME</label>
+                                        <select class="form-control" ng-model="selectedTimeFrame" required ng-options="timeframe.base_time as timeframe.time for timeframe in timeframes" name="timeSelect">
+                                            <option value="" selected>--Select Time Frame--</option>
+                                        </select>
+                                         <div class="alert alert-danger" ng-show="myForm.$submitted && myForm.timeSelect.$error.required">Please Select a Time</div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-2">
+                                    <button type="submit" class="btn btn-warning" id="searchButton">SEARCH</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <br/>
+                </div><!--END OF FORM CONTAINER DIV-->
+                <div class="panel panel-default col-md-10" id="flightContainer" ng-show="display">
+                      <div class="panel-heading">
+                        <div class="col-xs-12 col-md-9">
+                            <div class="panel-title">
+                                <span>Flights {{showAirportStatus()}} {{showAirport()}}</span><br/>
+                                <span style="font-size:19px;">Date: {{showDate() | date:'yyyy-MM-dd'}} |  TIME: {{showInitialTime()}} - {{showEndTime()}}</span><br/>
+                                <span style="font-size:19px;">Airline: {{showAirline()}}</span></div>
+                        </div>
+                        <div class="localTime col-md-3">
+                            LOCAL TIME: {{showLocalTime()}}
+                        </div>
+                      </div><!--END OF PANEL HEADING DIV-->
+                      <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <tr>
+                                    <th ng-repeat="column in columns" class="mainTableColumn">{{column}}</th>
+                                </tr>
+                                <tr><td class="noResultMessage" >Sorry, no flights scheduled at that time.</td></tr>
+                                <tr ng-repeat="flight in flightinfos">
+                                    <td>{{flight.time}}</td>
+                                    <td>{{flight.destination | uppercase}}</td>
+                                    <td>{{flight.airlineInfos}}</td>
+                                </tr>
+                            </table>
+                        </div><!--END OF RESPONSIVE TABLE DIV-->
+                      </div><!--END OF PANEL-BODY DIV-->
+                </div><!--END OF PANEL DIV-->
+                <div class="mobileResult col-xs-12" ng-show="mobile">
+                    <div class="headlineContainer">
+                        <span id="panelTitle">{{showAirport()}}</span><br/>
+                        <span id="panelDate">Date: {{showDate() | date:'yyyy-MM-dd'}}</span><br/>
+                        <span id="panelTime">Time: {{showInitialTime()}} - {{showEndTime()}}</span><br/>
+                        <span id="panelAirline">Airline: {{showAirline()}}</span>
+                        <div class="noResultContainer">
+                            <p>Sorry, no flights scheduled at that time.<br/>Please try a new search.</p>
+                        </div> 
+                    </div>
+                     
+                    <ul ng-repeat="flight in flightinfos">
+                        <li><span>{{getmobileTime()}}</span> {{flight.time}}</li>
+                        <li><span>{{getmobileDestination()}}</span> {{flight.destination}}</li>
+                        <li><span>Flight No:</span> {{flight.airlineInfos}}</li>
+                        <hr/>
+                    <ul>
+                </div>  
+                <div class="newSearchButtonContainer  col-xs-12" ng-show="newSearchButton">
+                        <a href="index.html"><button type="submit" class="btn btn-primary" >New Search</button></a>
+                </div> 
+            </div><!--END OF ROW DIV-->
+            <div class="row">
+                <div class="container">
+                    
+                </div>
+            </div><!--END OF ROW DIV-->
+            
+        </div><!--END OF CONTAINER DIV-->
+    </div><!--END OF APP DIV-->
+    
+</div> <!--END OF MAIN DIV-->
+
+<!-- SCRIPTS -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script data-require="angular.js@1.2.0-rc3" data-semver="1.2.0-rc3" src="http://code.angularjs.org/1.2.0-rc.3/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.0/angular-ui-router.js"></script>
+<script src="script/affix.js"></script>
+<script src="script/alert.js"></script>
+<script src="script/button.js"></script>
+<script src="script/carousel.js"></script>
+<script src="script/collapse.js"></script>
+<script src="script/dropdown.js"></script>
+<script src="script/modal.js"></script>
+<script src="script/popover.js"></script>
+<script src="script/scrollspy.js"></script>
+<script src="script/tab.js"></script>
+<script src="script/tooltip.js"></script>
+<script src="script/transition.js"></script>
+<script src="script/jquery.pageslide.js"></script>
+<script src="script/myscript.js"></script>
+<script src="script/airport.js"></script>
+<!-- END OF SCRIPTS -->
+
+</body>
+</html>
+

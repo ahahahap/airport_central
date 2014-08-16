@@ -1,0 +1,297 @@
+html,
+body {
+  background-color: #000000;
+  height: 100%;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: "Oswald", sans-serif;
+}
+.main {
+  background: url('/images/taipei.jpg') top center no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position-x: inherit;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+nav {
+  position: fixed !important;
+  right: 0;
+  top: 0;
+  float: right;
+  height: 100%;
+  z-index: 800;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.active a {
+  color: #f69c0e !important;
+}
+.navbar-nav > li {
+  width: 100%;
+  font-weight: 300;
+  font-size: 25px;
+}
+#modal {
+  display: none;
+}
+#closeButton {
+  float: right;
+  margin-top: 10px;
+  font-size: 26px;
+}
+#closeButton a:hover {
+  text-decoration: none;
+}
+.navbar-brand i {
+  padding: 20px;
+}
+#navbarwrap {
+  display: none;
+  color: #ffffff;
+  width: 300px;
+  height: 100%;
+  right: 100px;
+  top: 0;
+  background-color: #060606;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: opacity 487ms ease-out 123ms;
+  -webkit-transition-delay: 123ms;
+  -moz-transition: opacity 487ms ease-out 123ms;
+  -o-transition: opacity 487ms ease-out 123ms;
+  transition: opacity 487ms ease-out 123ms;
+}
+.app {
+  max-width: 1151px;
+}
+.app .panel-body {
+  margin-top: 109px;
+}
+.appContainer {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.formContainer .row {
+  margin-bottom: 10px;
+}
+.formContainer button {
+  margin-top: 25px;
+  width: 75%;
+}
+.form-control:focus {
+  border: 2px solid #66afe9;
+}
+.alert-danger {
+  margin-top: 5px;
+}
+.has-error .form-control {
+  border: 2px solid #db403d;
+}
+.mainTableColumn {
+  color: #f69c0e;
+}
+#status ul {
+  text-transform: uppercase;
+  margin-top: 10px;
+  padding: 0;
+}
+#status ul li {
+  display: inline-block;
+}
+#status ul li a {
+  display: inline;
+  font-size: 18px;
+  color: #ffffff;
+}
+#status ul li a:hover {
+  text-decoration: none;
+}
+.departure:after {
+  content: "  |  ";
+  color: #ffffff !important;
+}
+.highlight {
+  color: #f69c0e !important;
+}
+.flightStatusToggle {
+  cursor: pointer;
+}
+.localTime {
+  float: right;
+  margin-top: 13px;
+}
+.panel-title span {
+  font-size: 25px;
+}
+.panel-default > .panel-heading {
+  color: #ffffff !important;
+  background-color: transparent;
+  border-color: transparent;
+}
+.panel-body {
+  background: rgba(0, 0, 0, 0.4);
+  margin-top: -25px;
+}
+table {
+  -webkit-filter: brightness(1);
+  -moz-filter: brightness(1);
+  -o-filter: brightness(1);
+  -ms-filter: brightness(1);
+  font-size: 18px;
+}
+.noResultMessage {
+  display: none;
+  border-top: none;
+}
+.noResultContainer {
+  display: none;
+  margin-top: 20px;
+  color: #f69c0e;
+}
+.noResultContainer p {
+  font-size: 16px;
+}
+.newSearchButtonContainer button {
+  width: 100%;
+}
+.newSearchButtonContainer {
+  margin-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.mobileResult ul {
+  background: rgba(0, 0, 0, 0.4);
+  list-style: none;
+}
+.mobileResult ul li {
+  font-size: 18px;
+  margin-left: -20px;
+}
+.mobileResult span {
+  color: #f69c0e;
+}
+.mobileResult hr {
+  border: none;
+}
+.mobileResult #panelTitle {
+  font-size: 19px;
+  color: #ffffff !important;
+}
+.mobileResult #panelDate,
+#panelTime,
+#panelAirline {
+  font-size: 18px;
+  color: #ffffff !important;
+}
+.headlineContainer {
+  background: rgba(0, 0, 0, 0.4);
+  margin: 0 0 20px 20px;
+}
+.about {
+  background: url('/images/about.jpg') top center no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position-x: inherit;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.aboutContent {
+  background: rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+.project {
+  background: url('/images/project.jpg') top center no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position-x: inherit;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+#projectContainer .panel-title {
+  margin-bottom: 15px;
+}
+.projectColumn {
+  color: #f69c0e;
+}
+.projectApp .panel-body {
+  margin: 36px 15px 0 15px;
+}
+.projectList {
+  letter-spacing: 3px;
+  padding-top: 22px;
+  font-size: 16px;
+}
+.contact {
+  background: url('/images/contact.jpg') top center no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-position-x: inherit;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.telephoneContainer {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 8px 16px 8px 10px;
+  width: 306px;
+}
+.telephone {
+  font-size: 34px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+.emailContainer {
+  background: rgba(0, 0, 0, 0.2);
+  padding-bottom: 14px;
+}
+.email {
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding-left: 48px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 34px;
+}
+footer h4 {
+  color: #808080;
+}
+footer ul {
+  color: #808080;
+  font-weight: 300;
+  list-style: none;
+}
+footer #address,
+#telephone {
+  font-size: 14px;
+}
+footer .social {
+  margin-top: 10px;
+}

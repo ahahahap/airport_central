@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default col-md-10" id="flightContainer">
+          <div class="panel-heading">
+            <div class="col-md-9">
+                <h2 class="panel-title">FLIGHTS ARRIVING YVR BETWEEN <span id="currentHour"></span> AND <span id="nextHour"></span></h2>
+            </div>
+            <div class="localTime col-md-2">
+                LOCAL TIME: <span id="currentTime"></span> 
+            </div>
+          </div><!--END OF PANEL HEADING DIV-->
+          <div class="panel-body">
+            <div class="table-responsive">
+               <table class="table">
+                    <tr>
+                        <th ng-repeat="column in columns" >{{column}}</th>
+                    </tr>
+                    <tr ng-repeat="flight in flighttrackers">
+                        <td>{{flight.arrivalDate.dateLocal.slice(11,16)}}</td>
+                        <td>{{flight.departureAirportFsCode}}</td>
+                        <td>{{flight.codeshares[0].fsCode}}{{flight.codeshares[0].flightNumber}}</td>
+                    </tr>
+                </table>
+            </div><!--END OF RESPONSIVE TABLE DIV-->
+          </div><!--END OF PANEL-BODY DIV-->
+        </div><!--END OF PANEL DIV-->
+    </div><!--END OF ROW DIV-->
+</div><!--END OF CONTAINER DIV-->

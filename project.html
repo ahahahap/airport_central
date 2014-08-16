@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"  > <!--<![endif]-->
+<head>
+
+<!-- TITLE AND DESCRIPTION -->
+<title>PROJECT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+<meta name="description" content="single page app"/>
+<meta name="keywords" content="single page application"/>
+
+<!-- END OF TITLE AND DESCRIPTIONS -->
+
+<!-- STYLES -->
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/jquery.pageslide.css" />
+<link rel="stylesheet" href="css/mystyle.css" />
+<link rel="stylesheet" href="css/responsive.css" />
+
+<!--[if lt IE 7]>
+    <link href="/css/bootstrap-ie7.css" rel="stylesheet" type="text/css" media="all" />
+<![endif]-->
+
+<!--[if lt IE 9]>
+    <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="http://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- END OF STYLES -->
+
+</head>
+
+<body>
+
+<div class="project">
+
+    <!--MAIN NAVIGATION-->
+    <nav class="navbar navbar-inverse">
+
+        <div id="modal">
+            <p id="closeButton"><a href="javascript:$.pageslide.close()">&#10006</a></p>
+            
+            <ul class="nav navbar-nav">
+              <li><a href="index.html" >HOME</a></li>
+              <li><a href="about.html">ABOUT</a></li>
+              <li class="active"><a href="#" >PROJECTS</a></li>
+              <li><a href="contact.html" >CONTACT</a></li>
+            </ul>
+
+            <!--FOOTER-->
+            <footer>
+              <ul class="list-group">
+                    <li><h4>SINGLE APP ORIGIN</h4></li>
+                    <li id="address">123 Technology St. Vancouver, BC<br>V6B 1A4 Canada</li>
+                    <li id="telephone">Tel: (604)000-2000</li>
+                    <li class="social">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/facebook.png" alt="facebook">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/tw.png" alt="twitter">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/tumblr.png"  alt="tumblr">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/in.png"  alt="linkedin">
+                        <img src="https://s3-us-west-2.amazonaws.com/foreignpolicy2/image/social/rssfeed.png"  alt="rss">
+                    </li>
+                </ul>
+                
+            </footer><!--END OF FOOTER-->
+        </div><!--END OF MODAL-->
+        
+        <div id="bar">
+            <div id="menu_button">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+              </button>
+              <a class="navbar-brand" href="#modal">
+                <i class="fa fa-bars fa-2x"></i>
+              </a>
+            </div>
+            <div id="bcm_logo"></div>
+        </div>
+    </nav><!--END OF MAIN NAVIGATION-->
+
+    <div class="projectApp" ng-app="projectApp"  ng-controller="projectController">
+        <div ng-view></div>
+    </div>
+    
+</div> <!--END OF MAIN DIV-->
+
+<!-- SCRIPTS -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.0/angular-ui-router.js"></script>
+<script src="script/affix.js"></script>
+<script src="script/alert.js"></script>
+<script src="script/button.js"></script>
+<script src="script/carousel.js"></script>
+<script src="script/collapse.js"></script>
+<script src="script/dropdown.js"></script>
+<script src="script/modal.js"></script>
+<script src="script/popover.js"></script>
+<script src="script/scrollspy.js"></script>
+<script src="script/tab.js"></script>
+<script src="script/tooltip.js"></script>
+<script src="script/transition.js"></script>
+<script src="script/jquery.pageslide.js"></script>
+<script src="script/myscript.js"></script>
+<script src="script/project.js"></script>
+<!-- END OF SCRIPTS -->
+
+</body>
+</html>
+

@@ -1,0 +1,338 @@
+html, body{
+	background-color: @color-black;
+	height: @body-height;
+	overflow: @body-overflow;
+	color: @color-white;
+	font-family: @font-oswald;
+}
+
+
+.main{
+	background: url('@{main-url}/taipei.jpg') top center no-repeat;
+  	background-attachment: fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-position-x: inherit;
+  	background-size: cover;
+	height: @main-height;
+	width: @main-width;
+	overflow: auto;
+}
+
+nav{
+	position: fixed !important;
+	right: 0;
+	top: 0;
+	float: @nav-float;
+	height: @nav-height;
+	z-index: @nav-z-index;
+	-webkit-transform: @navbarwrap-transform;
+	-moz-transform:  @navbarwrap-transform;
+	-ms-transform:  @navbarwrap-transform;
+	-o-transform:  @navbarwrap-transform;
+	transform:  @navbarwrap-transform;
+}
+
+.active a{
+	color: @color-orange !important;
+}
+
+.navbar-nav > li{
+	width: 100%;
+	font-weight: @navbar-li-font-weight;
+	font-size: @navbar-li-font-size;
+}
+
+#modal{
+	display: none;
+}
+
+#closeButton{
+	float: @closeButton-float;
+	margin-top: @closeButton-margin-top;
+	font-size: @closeButton-font-size;
+}
+
+#closeButton a:hover{
+	text-decoration: none;
+}
+
+.navbar-brand i{
+	padding: 20px;
+}
+
+#navbarwrap{
+	display:none;
+	color: @color-white;
+	width: @navbarwrap-width;
+	height: @navbarwrap-height;
+	right: @navbarwrap-right;
+	top: @navbarwrap-top;
+	background-color: @color-very-dark-grey;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: @navbarwrap-transform;
+	-moz-transform: @navbarwrap-transform;
+	-ms-transform: @navbarwrap-transform;
+	-o-transform: @navbarwrap-transform;
+	transform: @navbarwrap-transform;
+	-webkit-transition: @navbarwrap-transition;
+	-webkit-transition-delay: 123ms;
+	-moz-transition: @navbarwrap-transition;
+	-o-transition: @navbarwrap-transition;
+	transition: @navbarwrap-transition;
+}
+
+.app{
+	max-width: @app-width;
+}
+
+.app .panel-body{
+	margin-top: @app-panel-body-margin-top;
+}
+
+.appContainer{
+	margin-right: @app-container-margin-right;
+	margin-left: @app-container-margin-left;
+	padding-left: @app-container-padding-left;
+	padding-right: @app-container-padding-right;
+}
+
+.formContainer .row{
+	margin-bottom: @formContainer-row-margin-btm;
+}
+
+.formContainer button{
+	margin-top: @formContainer-btn-margin-top;
+	width: @formContainer-btn-width;
+}
+
+.form-control:focus{
+	border: @formcontrol-focus-border;
+}
+
+.alert-danger{
+	margin-top: @alert-danger-margin-top;
+}
+
+.has-error .form-control{
+	border: @has-error-border;
+}
+
+.mainTableColumn{
+	color: @color-orange;
+}
+
+#status ul{
+	text-transform: @status-ul-text-transform;
+	margin-top: @status-ul-margin-top;
+	padding: 0;
+}
+
+#status ul li{
+	display: inline-block;
+}
+
+#status ul li a{
+	display: inline;
+	font-size: @status-font-size;
+    color: @color-white;
+}
+
+#status ul li a:hover{
+	text-decoration: none;
+}
+
+
+.departure:after{
+	content:"  |  ";
+	color: @color-white !important;
+}
+
+.highlight{
+	color: @color-orange !important;
+}
+
+
+.flightStatusToggle{
+	cursor: @flightStatusToggle-cursor;
+}
+
+.localTime{
+	float: @localtime-float;
+	margin-top: @localtime-margin-top;
+}
+
+.panel-title span{
+	font-size: @panel-title-span-font-size;
+}
+
+.panel-default > .panel-heading   { 
+    color: @color-white !important;
+    background-color: @panel-heading-bg-color;
+    border-color: @panel-heading-border-color;
+}
+
+.panel-body{
+	background: @panel-body-background;
+	margin-top: @panel-body-margin-top;
+}
+
+table{
+	-webkit-filter: brightness(1);
+	-moz-filter: brightness(1);
+	-o-filter:  brightness(1);
+	-ms-filter:  brightness(1);
+	font-size: @table-font-size;
+}
+
+.noResultMessage{
+	display: @noresult-display;
+	border-top: @noresult-border-top;
+}
+
+.noResultContainer{
+	display: @noresultContainer-display;
+	margin-top: @noresultContainer-margin;
+	color: @color-orange;
+}
+
+.noResultContainer p{
+	font-size: @noresultContainer-font-sz;
+}
+
+.newSearchButtonContainer button{
+	width: @newSearch-button-width;
+}	
+
+.newSearchButtonContainer{
+	margin-bottom: @newSearch-margin-btm;
+	padding-left: @newSearch-padding-left;
+	padding-right: @newSearch-padding-right;
+}
+
+.mobileResult ul{
+	background: @mobileResult-bg;
+	list-style: @mobileResult-list-style;
+}
+
+.mobileResult ul li{
+	font-size: @mobileResult-font-size;
+	margin-left: @mobileResult-margin-left;
+}
+
+.mobileResult span{
+	color: @color-orange;
+}
+
+.mobileResult hr{
+	border: @mobileResult-hr-border;
+}
+
+.mobileResult #panelTitle{
+	font-size: @mobileResult-panelTitle-font-sz;
+	color: @color-white !important;
+}
+
+.mobileResult #panelDate, #panelTime, #panelAirline{
+	font-size: @mobileResult-panel-font-sz;
+	color: @color-white !important;
+}
+
+.headlineContainer{
+	background: @headlineContainer-bg;
+	margin: @headlineContainer-margin;
+}
+
+
+//ABOUT US PAGE
+.about{
+	background: url('@{about-url}/about.jpg') top center no-repeat;
+  	background-attachment: fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-position-x: inherit;
+  	background-size: cover;
+	height: @main-height;
+	width: @main-width;
+	overflow: auto;
+}
+
+.aboutContent{
+	background: @aboutContent-bg;
+	font-size: @aboutContent-font-size;
+	letter-spacing: @aboutContent-letter-spacing;
+}
+
+//PROJECT PAGE
+.project{
+	background: url('@{project-url}/project.jpg') top center no-repeat;
+  	background-attachment: fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-position-x: inherit;
+  	background-size: cover;
+	height: @main-height;
+	width: @main-width;
+	overflow: auto;
+}
+
+#projectContainer .panel-title{
+	margin-bottom: @project-panel-title-margin;
+}
+
+.projectColumn{
+	color: @color-orange;
+}
+
+.projectApp .panel-body{
+	margin: @project-panel-body-margin;
+}
+
+.projectList{
+	letter-spacing: @projectList-letter-spacing;
+	padding-top: @projectList-padding-top;
+	font-size: @projectList-font-size;
+}
+
+
+
+//CONTACT PAGE
+.contact{
+	background: url('@{contact-url}/contact.jpg') top center no-repeat;
+  	background-attachment: fixed;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-position-x: inherit;
+  	background-size: cover;
+	height: @main-height;
+	width: @main-width;
+	overflow: auto;
+}
+
+.telephoneContainer{
+	background: @telephoneContainer-bg;
+	padding: @telephoneContainer-padding;
+	width: @telephoneContainer-width;
+}
+
+.telephone{
+	font-size: @telephone-font-size;
+	letter-spacing: @telephone-letter-spacing;
+	text-align: @telephone-text-align;
+}
+
+.emailContainer{
+	background: @emailContainer-bg;
+	padding-bottom: @emailContainer-padding-btm;
+}
+
+.email{
+	font-size: @email-font-size;
+	letter-spacing: @email-letter-spacing;
+	padding-left: @email-padding-left;
+}
+

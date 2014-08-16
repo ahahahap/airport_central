@@ -1,0 +1,111 @@
+@media (max-width: 1024px) {
+	
+}
+
+@media (max-width: 800px) {
+
+
+}
+
+@media (max-width: 1024px) and (min-width: 600px) {
+
+
+}
+
+@media (max-width: 960px){
+	#searchButton{
+		width: 100%;
+	  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    width: 100%;
+    height: 45px;
+  }
+  .navbar {
+    margin-bottom: 0;
+  }
+  .navbar-inverse .navbar-toggle {
+    border-color: transparent;
+  }
+
+  .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
+  	background-color: transparent;
+  }
+
+  .navbar-brand{
+  	float: right;
+	margin-right: -27px;
+  }
+
+  .navbar-brand i {
+    padding: 0;
+  }
+  #closeButton {
+    margin-top: 0;
+  }
+  .fa-2x {
+    font-size: 1.5em;
+  }
+
+  #searchButton{
+	width: 100%;
+  }
+
+  .aboutApp{
+	margin-top: 50px;
+  }
+
+  .projectApp{
+	margin-top: 50px;
+  }
+
+}
+
+@media (min-width: 605px) and (max-width: 640px) {
+	#searchButton{
+		width: 100%;
+	}
+
+	#pageslide{
+		overflow-x: auto;
+	}
+
+	footer{
+		position: inherit;
+	}
+
+}
+
+@media (max-width: 540px) {
+	.aboutApp{
+		margin-top: 50px;
+	}
+
+	.projectApp{
+		margin-top: 50px;
+	}
+}
+
+
+@media (max-width: 600px) {
+
+
+}
+
+@media (max-width: 540px) {
+
+
+}
+
+
+@media (max-width: 480px) {
+
+}
+
+
+@media (max-width: 384px) {
+
+
+}
