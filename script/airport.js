@@ -57,11 +57,9 @@ app.controller('airportController', function ($scope, $http, $filter) {
 
 	var deviceHeight = $(window).height();
 	var deviceWidth = $(window).width();
-	console.log("Device's width = " + deviceWidth);
-	console.log("Device's height = " + deviceHeight);
+
 
 	if (navigator.appName == 'Microsoft Internet Explorer') { 
-		console.log("It's IE !");
 	    ie = true;	
 		var e = ("article,aside,figcaption,figure,footer,header,hgroup,nav,section,time").split(',');
 		for (var i = 0; i < e.length; i++) {
@@ -74,49 +72,40 @@ app.controller('airportController', function ($scope, $http, $filter) {
 	}
 
 	if (navigator.userAgent.match(/Windows Phone/i)) {
-		console.log("WINDOWS PHONE");
 		winPhone = true;
 	}
 
 	if (navigator.userAgent.match(/Android/i)) {
 		if ( !/mobile/i.test(navigator.userAgent) ) { 
 			androidTablet = true;
-			console.log("IT's ANDROID TABLET");
 		}
 
 		if ((/mobile/i.test(navigator.userAgent) && deviceWidth < 950)){
 			androidPhone = true;
 			galaxyNoteThreePortrait = true;
-			console.log("IT's ANDROID PHONE");
 		}else if ((/mobile/i.test(navigator.userAgent)  && deviceWidth == 960)){
 			galaxyNoteThreeLandScape = true;
-			console.log("GALAXY NOTE 3 LANDSCAPE MODE");
 		}
 
 		if((androidTablet == true) && (deviceWidth < deviceHeight)){
-			console.log("ANDROID TABLET PORTRAIT MODE");
 			tabletPortrait = true;
 		}
 	}
 
 	if (navigator.userAgent.match(/PlayBook/i)) {
 		if(deviceWidth < deviceHeight){
-			console.log("PLAYBOOK PORTRAIT MODE");
 			tabletPortrait = true;
 		}
-		console.log("IT'S BLACKBERRY PLAYBOOK")
 		blackberryTablet = true;
 	}
 
 	if (navigator.userAgent.match(/BB10/i)) {
-		console.log("IT'S BLACKBERRY PHONE");
 		blackberryPhone = true;
 	}
 
 	
 	if (navigator.userAgent.match(/iPad/i)) {
 		if(deviceWidth < deviceHeight){
-			console.log("IPAD PORTRAIT MODE")
 			tabletPortrait = true;
 		}
 	}
@@ -228,7 +217,6 @@ app.controller('airportController', function ($scope, $http, $filter) {
 		{code: 'WS', name: 'WestJet'}
 	];
 
-	//$scope.selectedAirline = 'CX';
 
 	$scope.timeframes =[
 		{time:'00:00-01:00', base_time: '0'},
@@ -257,29 +245,6 @@ app.controller('airportController', function ($scope, $http, $filter) {
 		{time:'23:00-00:00', base_time: '23'}
 	];
 
-	//$scope.selectedTimeFrame = '11';
-
-	 
-  	/*var ur5 = "https://api.flightstats.com/flex/flightstatus/rest/v2/jsonp/airport/status/YVR/arr/"+ currYear + "/" + currMonth + "/"+ currDate +"/" + currHour + "?appId=8e5aec87&appKey=ed34be983e971cafe903e442f4bf630e&utc=false&numHours=1&maxFlights=10&callback=JSON_CALLBACK";
-  	var url6 = "https://api.flightstats.com/flex/flightstatus/rest/v2/jsonp/airport/status/YVR/arr/2014/7/20/8?appId=8e5aec87&appKey=ed34be983e971cafe903e442f4bf630e&utc=false&numHours=1&callback=JSON_CALLBACK";
-
-
-	  $scope.flights = [];
-	  $scope.flighttrackers = [];
-	  $scope.arrivalTime = [];
-	  $scope.columns = [ 'ARRIVAL TIME', 'ARRIVING FROM', 'AIRLINES' ];
-	  // Default orderBy
-	  $scope.orderBy = $scope.columns[0];
-
-	  $http.jsonp(url).success(function(response){
-	  	console.log(response);
-	    $scope.flighttrackers= response.flightStatuses;
-	    //$scope.arrivalTime = response.flightStatuses.arrivalDate;
-	  }).error(function(error) {
-	         console.log(JSON.stringify(error));
-	  });*/
-
-	 //blank object to hold form data
 	 $scope.formData = {}; 
 	 var flightArray = new Array();
 
@@ -302,7 +267,6 @@ app.controller('airportController', function ($scope, $http, $filter) {
        };
 
        var status = angular.element(document.querySelector('.departure')).hasClass("highlight") ? "dep" : "arr";
-       //console.log("Airport Status = " + status);
 
       if (mobileDevice == true) {
       	var stats = $scope.selectedStatus;
@@ -328,9 +292,6 @@ app.controller('airportController', function ($scope, $http, $filter) {
 	  	 $scope.columns = [ 'DEPARTURE TIME', 'DEPARTING TO','FLIGHT#'];
 	  }
 	 
-	  
-	  // Default orderBy
-	  //$scope.orderBy = $scope.columns[0];
 
 	   $scope.showAirportStatus = function(){
 	    	console.log("STATUS = " + status);
@@ -367,11 +328,8 @@ app.controller('airportController', function ($scope, $http, $filter) {
 	  	console.log(response);
 	  	$scope.airportList = response.appendix.airports;
 	    $scope.flighttrackers= response.flightStatuses;
-	    //console.log("flighttrackers length = " + $scope.flighttrackers.length)
 	    flightArray = $scope.flighttrackers.slice();
-	    /*for(var i = 0;i < flightArray.length; i++){
-	    	console.log("Before sorted ["+i+"] = " + flightArray[i].arrivalDate.dateLocal.slice(11,16))
-	    }*/
+
 	    console.log("flightArray.length = " + flightArray.length);
 
 	    if (mobileDevice == false) {
@@ -417,13 +375,6 @@ app.controller('airportController', function ($scope, $http, $filter) {
 
 		}
 
-	    //console.log("Sorted Array: " + flightArray);
-
-	    /*for(var i = 0;i < flightArray.length; i++){
-	    	console.log("After sorted ["+i+"] = " + flightArray[i].arrivalDate.dateLocal.slice(11,16))
-	    }*/
-
-	    //console.log("flightArray[0].codeshares.length = " + flightArray[0].codeshares.length);
 	    try{
 	    	if(flightArray.length > 0){
 	    			if (angular.element(document.querySelector('.noResultMessage')).css("display") == "block"){
@@ -436,9 +387,6 @@ app.controller('airportController', function ($scope, $http, $filter) {
 
 	    		for(var i in flightArray){
 		    		var airlineSharedCodes = new Array();
-		    		//console.log("i = " + i);
-		    		//console.log("flightArray[i].arrivalDate.dateLocal.slice(11,16)}" + flightArray[i].arrivalDate.dateLocal.slice(11,16));
-		    		//console.log("flightArray[i].codeshares.length = " + flightArray[i].codeshares.length);
 		    		if(flightArray[i].hasOwnProperty('codeshares')){
 		    			for( var j in flightArray[i].codeshares ) {
 			    			airlineSharedCodes.push("" + flightArray[i].codeshares[j].fsCode + "" + flightArray[i].codeshares[j].flightNumber );
