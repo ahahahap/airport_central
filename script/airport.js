@@ -137,7 +137,11 @@ app.controller('airportController', function ($scope, $http, $filter) {
 	$scope.airports = [ 
 		{name: 'Vancouver International Airport', code: 'YVR'},
 		{name: 'Toronto Pearson International Airport', code: 'YYZ'}
-
+		{name: 'Calgary International Airport', code: 'YYC'},
+		{name: 'Montréal–Pierre Elliott Trudeau International Airport', code: 'YUL'}
+		{name: 'Ottawa Macdonald-Cartier International Airport', code: 'YOW'},
+		{name: 'Winnipeg International Airport', code: 'YWG'}
+		{name: 'Halifax Stanfield International Airport', code: 'YHZ'}
 	];
 
 	$scope.airlines = [
