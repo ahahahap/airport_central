@@ -521,8 +521,6 @@ app.controller('airportController', function ($scope, $http, $filter) {
 				    case "YHZ":
 				    		return "Halifax Stanfield International Airport"
 				    		break;
-				    default:
-				        default ""
 				}
      }
 
