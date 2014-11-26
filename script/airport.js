@@ -498,9 +498,32 @@ app.controller('airportController', function ($scope, $http, $filter) {
      	}
      }
 
-
      $scope.showAirport = function(){
-     	return $scope.selectedAirport == "YVR" ? "Vancouver International Airport" : "Toronto Pearson International Airport";
+     	 switch($scope.selectedAirport) {
+				    case "YVR":
+				        return "Vancouver International Airport"
+				        break;
+				    case "YYZ":
+				        return "Toronto Pearson International Airport"
+				        break;
+				    case "YYC"
+				    		return "Calgary International Airport"
+				    		break;
+				    case "YUL"
+				    		return "Montréal–Pierre Elliott Trudeau International Airport"
+				    		break;
+				    case "YOW"
+				    		return "Ottawa Macdonald-Cartier International Airport"
+				    		break;
+				    case "YWG"
+				    		return "Winnipeg International Airport"
+				    		break;
+				    case "YHZ"
+				    		return "Halifax Stanfield International Airport"
+				    		break;
+				    default:
+				        default ""
+				}
      }
 
      $scope.showInitialTime = function(){
