@@ -506,19 +506,19 @@ app.controller('airportController', function ($scope, $http, $filter) {
 				    case "YYZ":
 				        return "Toronto Pearson International Airport"
 				        break;
-				    case "YYC"
+				    case "YYC":
 				    		return "Calgary International Airport"
 				    		break;
-				    case "YUL"
+				    case "YUL":
 				    		return "Montréal–Pierre Elliott Trudeau International Airport"
 				    		break;
-				    case "YOW"
+				    case "YOW":
 				    		return "Ottawa Macdonald-Cartier International Airport"
 				    		break;
-				    case "YWG"
+				    case "YWG":
 				    		return "Winnipeg International Airport"
 				    		break;
-				    case "YHZ"
+				    case "YHZ":
 				    		return "Halifax Stanfield International Airport"
 				    		break;
 				    default:
