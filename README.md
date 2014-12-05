@@ -7,8 +7,10 @@ An easy to use airport’s arrival and departure app for several major Canadian 
 
 Technology stack:
 
-HTML/LESS
-Bootstrap
-jQuery
-AngularJS
-Flightstats API
+<ul>
+<li>HTML/LESS</li>
+<li>Bootstrap</li>
+<li>jQuery</li>
+<li>AngularJS</li>
+<li>Flightstats API</li>
+</ul>
